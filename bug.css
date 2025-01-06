@@ -1,0 +1,25 @@
+The following CSS code causes unexpected behavior in certain browsers because of a specificity issue:
+
+```css
+div {
+  color: blue;
+}
+
+.special-class {
+  color: red;
+}
+
+#special-id {
+  color: green;
+}
+
+#special-id.special-class {
+  color: purple; /*This selector is highly specific*/
+}
+
+#special-id.special-class div { /*This selector is even more specific */
+  color: orange;
+}
+```
+
+The problem arises when multiple selectors target the same element.  The specificity rules of CSS dictate which style is applied.  In some cases, the unexpected specificity might override the styles that were intended to be applied. This is more likely to occur when using complex selectors like the ones shown in this example.
