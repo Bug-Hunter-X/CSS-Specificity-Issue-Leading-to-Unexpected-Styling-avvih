@@ -1,0 +1,28 @@
+The solution involves restructuring the CSS to improve readability and manage specificity:
+
+```css
+div {
+  color: blue;
+}
+
+.special-class {
+  color: red;
+}
+
+#special-id {
+  color: green;
+}
+
+/*More specific selectors are applied only when needed*/
+.special-class #special-id {
+  color: purple;
+}
+
+/*Avoid nested selectors and use more descriptive class names*/
+.special-class-in-id {
+  color: orange;
+}
+
+```
+
+By avoiding deeply nested selectors and being mindful of specificity order, we can prevent unexpected behavior. Using more descriptive class names also improves readability and maintainability.
